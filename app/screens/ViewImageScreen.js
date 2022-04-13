@@ -1,51 +1,43 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-const image = require('./assets/chair.jpg');
+import colors from '../config/colors';
+
+const image = require('../assets/chair.jpg');
 
 export default function ViewImageScreen() {
     return (
-        <View style={styles.background}>
-            <View style={styles.topContainer}>
-                <View style={styles.box1} />
-                <View style={styles.box2} />
-            </View>
-            <View style={styles.imageContainer}>
-                <Image resizeMode='contain' source={image} style={styles.image} />
-            </View>
+        <View style={styles.container}>
+            <View style={styles.closeIcon} />
+            <View style={styles.deleteIcon} />
+            <Image resizeMode='contain' source={image} style={styles.image} />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    background: {
-        paddingTop: 20,
-        backgroundColor: '#000',
+    closeIcon: {
+        width: 50,
+        height: 50,
+        backgroundColor: colors.primary,
+        position: 'absolute',
+        top: 40,
+        left: 30,
+    },
+    container: {
+        backgroundColor: colors.black,
         flex: 1,
     },
-    box1: {
-        height: 50,
+    deleteIcon: {
         width: 50,
-        backgroundColor: '#fc5c65'
-    },
-    box2: {
         height: 50,
-        width: 50,
-        backgroundColor: '#4ecdc4'
+        backgroundColor: colors.secondary,
+        position: 'absolute',
+        top: 40,
+        right: 30,
     },
     image: {
-        height: '85%',
         width: '100%',
-    },
-    imageContainer: {
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    topContainer: {
-        width: '100%',
-        paddingStart: 20,
-        paddingEnd: 20,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+        height: '100%',
     }
 });

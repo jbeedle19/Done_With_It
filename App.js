@@ -15,16 +15,6 @@ import { useDimensions } from '@react-native-community/hooks';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <WelcomeScreen />
-      {/* <ViewImageScreen /> */}
-    </SafeAreaView>
+    <ViewImageScreen />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff'
-  },
-});
